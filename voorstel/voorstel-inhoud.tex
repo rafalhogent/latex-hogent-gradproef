@@ -15,37 +15,20 @@
 \section{Inleiding}%
 \label{sec:inleiding}
 
-Waarover zal je graduaatsproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
+Mijn graduaatsproef zal gaan over de ontwikkeling van een cross-platform applicatie met gebruik maken van TypeScript/JavaScript. Het wordt een applicatie die gebruikers laat hun gegevens (bv. medische metingen) noteren, bewaren en synchroniseren met de server, waardoor andere clients er toegang toe krijgen. Ik wil dat mijn applicatie volledig offline kan werken, de gegevens zullen in de Local Storage bewaard en op aanvraag gesynchroniseerd.
 
-\begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
-\end{itemize}
+Mijn werk kan nuttig zijn voor alle ontwikkelaars die zich hebben beperkt tot het publiceren van hun producten alleen als webapplicaties, terwijl standalone applicaties handiger kunnen zijn voor gebruikers. Vanwege de geplande functionaliteiten van mijn applicatie kunnen ziekenhuizen of wijkgezondheidscentra overwegen om deze te implementeren om op afstand door patiënten zelf ingevulde gegevens te kunnen verzamelen.
 
-Denk er aan: een typische graduaatsproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
+Mijn onderzoeksvraag:
+\textbf{Welke voordelen en moeilijkheden kunnen we krijgen bij het maken van applicaties voor meerdere platformen met gebruik maken van één enkele codebron in JS/TS, het Quasar-framework, Electron en Cordova? } 
 
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
-
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
-
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
 
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{Literatuurstudie}%
 \label{sec:literatuurstudie}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je graduaatsproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
-
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
-
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
-
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
-
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
+In het geval van applicatieontwikkeling zal het gebruik van literatuur vooral plaatsvinden in de online documentatie van de gebruikte frameworks en op web-pagina's zoals StackOverflow en Github op zoek naar oorzaken en oplossingen voor technische problemen.
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -54,31 +37,46 @@ Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle no
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
 
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
+% Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+Het onderzoek zal uitgevoerd worden door het maken van PoC (proef of concept) applicatie en het lezen van de online documentatie van bepaalde frameworks.
+Graduaatsproef als applicatieontwikkeling is een taak die niet alleen kennis van programmeertalen vereist, maar ook technische vaardigheden, dus het kan alleen worden gemaakt door mensen met IT-achtergrond.
+Het project zal gemaakt worden op een PC laptop met Linux en Windows als virtuele machine (VirtualBox). De code wordt geschreven in de Visual Studio Code, samen met extensies die zijn gewijd aan TypeScript en Vue. Ik ga ook gebruik maken van Android emulator om mobile versie van de applicatie te kunnen testen.
 
-Valt je onderwerp onder één van de typische soorten graduaatsproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
 
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een graduaatsproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+Ik voorzie onderstaande fases van het werk:
+\begin{itemize}
+  \item Onderzoek van beschikbare cross-platform oplossingen
+  \item Een werkende PoC-template applicatie leveren voor alle platformen (Web, Desktop (Windows en Linux), Mobile (Android))
+  \item Layout design, Domein- en architectuuranalyse met respect voor OOP
+  \item Implementatie van de functionaliteiten
+  \item Frontend applicatie koppelen met backend in NestJs
+\end{itemize}
 
-Uit dit onderdeel moet duidelijk naar voor komen dat je graduaatsproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een graduaatsproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+Mijn Graduaatsproef zal in het Engels geschreven worden.
 
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
-
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
+% Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
 
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw graduaatsproef voor een meerwaarde?
+Als resultaat verwacht ik een stabiel werkende applicatie die identiek eruitziet op alle platformen. De ontwikkeling proces moet ook snel en effectief zijn, met andere woorden wil ik graag nagaan welke moeilijkheden zich tijdens het ontwikkelingsproces kunnen voordoen, waardoor het werk kan worden vertraagd of de kwaliteit kan worden verlaagd. Elk software-ontwikkelingsbedrijf kan veel tijd en dus geld besparen als het product voor alle platforms kan worden getest en gepubliceerd met behulp van één enkele codebron.
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+
+\section{Referenties}
+
+\begin{itemize}
+  \item \href{https://vuejs.org/guide/}{VueJs documentatie}
+  \item \href{https://quasar.dev/introduction-to-quasar}{Introduction to Quasar}
+  \item \href{https://cordova.apache.org/docs}{Apache Cordova documentatie}
+  \item \href{https://www.electronjs.org/}{ElectronJs documentatie}
+  \item \href{https://docs.nestjs.com/}{NestJs documentatie}
+\end{itemize}
+
 
