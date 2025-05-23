@@ -19,13 +19,18 @@
 %   \item \ldots
 % \end{itemize}
 
-\section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
+\section{\IfLanguageName{dutch}{Probleemstelling}{Problem statement and motivation}}%
 \label{sec:probleemstelling}
 
 % Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. 
 % De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. 
 % Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. 
 % Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+
+Developing an application often requires a significant amount of knowledge and experience, and working with multiple languages can be another challange. 
+
+The motivation for writing this paper is to develop a simple and efficient method for coding and publishing cross-platform applications available on all popular and widely used devices, while minimizing time and costs associated with the development process, reduction of code duplication and avoiding the need for multiple implementations of the same functionality in different frameworks for different device types. If a decision was made that “Apply” button has to be for example: green background with yellow text, so that when using single codebase approach - information and implementation are coded in one place for all devices, a kind of single source of true for UI.
+
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
@@ -35,12 +40,26 @@
 % Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. 
 % Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
 
+The main research question is:  What benefits and difficulties can be expect when making applications for multiple platforms using a single code source?
+
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
 
 % Wat is het beoogde resultaat van je graduaatsproef? 
 % Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. 
 % Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+
+The purpose of this thesis is to provide a set of proof-of-concept client applications for different operating systems and web-browsers that can synchronize user data through a server. 
+
+The following things will be assessed:
+\begin{itemize}
+    \item  applications stability and performance
+    \item  possible differences in appearance on different screens
+    \item  difficulties during development phase
+    \item  user experience
+\end{itemize}
+This goal should be achieved using one source of code. This thesis will describe the processes and techniques to help build robust cross-platform single codebase application and justify the choice of programming language and framework technologies.
+
 
 \section{\IfLanguageName{dutch}{Opzet van deze graduaatsproef}{Structure of this associate thesis}}%
 \label{sec:opzet-graduaatsproef}
@@ -58,3 +77,10 @@
 % TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
 
 % In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
+
+This thesis consists of the following parts:
+\begin{itemize}
+    \item  analysis of available solutions, where different frameworks will be described and compared
+    \item  development of the proof-of-concept application - including justification of the choice of programming language and framework, layout design, domain description, front-end functionalities and back-end synchronization
+    \item evaluation of results
+\end{itemize}
