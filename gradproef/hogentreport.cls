@@ -406,7 +406,7 @@
     }
 
     \IfFontExistsTF{Fira Code}{%
-            \setmonofont{Fira Code}[StylisticSet={1,3}]
+            \setmonofont{Fira Code}[StylisticSet={1,3}, Scale=0.9]
             %% Shapely l, upright quotes, striked zeroes
 
     }{%
