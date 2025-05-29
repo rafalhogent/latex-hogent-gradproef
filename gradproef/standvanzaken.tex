@@ -28,4 +28,100 @@
 % Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
 
 
+This section will review information on cross-platform technologies and help justify the selection of technology for the proof-of-concept application. Like the mobile smartphones the idea of cross-platform development is relatively young, so it should not be surprising that most publications on this topic come from the last few years. For the purposes of this work, mainly online articles, documentation of frameworks and coding languages have been analyzed. There are many solutions for cross-platform software development, here will be the most popular described. The purpose of the literature review is to compare the technologies in terms of available platforms, for which applications can be published, level of difficulty and complexity of the developement process.
 
+
+\section{{Flutter}}%
+\label{sec:flutter}
+
+Flutter is one of the most popular cross-platform frameworks. It was weleased by Google in 2017 and uses Dart as its programming language and offers a rich set of pre-built widgets.
+The framework offers a 'hot reload' feature what allows to see how the application changes as soon as code changes, without you having to recompile it. It supports Google's Material Design and doesn't rely on web browser technology. Instead, it has its own rendering engine for drawing widgets.
+
+\section{{React Native}}%
+\label{sec:reactnative}
+
+React Native is an open-source framework developed by Facebook (now Meta) for building cross-platform mobile apps using React, a JavaScript library. It allows developers already familiar with  web-development technologies to create native mobile applications for iOS and Android using a single codebase. It provides a set of pre-built components that can be used to create user interfaces, such as buttons, text fields, and views. The developing principles are very similar to React web-framework, orginal html tags were replaced with dedicated components like <Text> or <TouchableOpacity> \autocite{ReactNative}. React Native is one of the most popular framework for mobile development with great support of developers community.
+
+It runs in a background process interpreting the JavaScript code directly on the target device and communicates with the native platform using serialized data over an asynchronous bridge \autocite{ReactNativeMedium}. Hot reload feature is also available.
+
+According to Radhika Vyas article in 'Index.dev', React Native is efficient, but its performance lags below native apps, especially in sophisticated apps needing significant computations or animations. It also has problems with achieving a uniform look and feel across both iOS and Android may be difficult and requires more work to satisfy users experience \textcite{Vyas}
+
+Publishing React Native projects as Web Apps is also possible, but can be difficult due to incompatibility of components between web-browser and mobile device, what requires platform specific conditional component rendering.
+
+
+
+
+\begin{listing}[H]
+\begin{minted}{react}
+<View>
+    {Platform.OS == "android" || Platform.OS == "ios" ? (
+        <DatePicker modal open={visibleDatePicker} mode="date" date={date}
+            onConfirm={(date) => {
+                onDateOK(date);
+                }}
+            onCancel={() => {
+                setDatePickerVisible(false);
+                }}
+        />) : (
+        <DatePickerModal label="Choose date" date={date}
+            mode="single" saveLabel="Ok" visible={visibleDatePicker}
+            onDismiss={() => {
+                    setDatePickerVisible(false);
+                }}
+            onConfirm={(params) => {
+                    if (params.date) onDateOK(params.date);
+                    setDatePickerVisible(false);
+                }}
+        />
+    )}
+</View>
+\end{minted}
+\caption[React Native platform specific conditional rendering]{React Native platform specific conditional rendering. Example provided by thesis author uses two different components depending on target OS}
+\end{listing}
+                
+                
+                
+                
+\section{{Ionic}}%
+\label{sec:ionic}
+
+Ionic Framework is an open-source mobile app development platform that allows developers to build native and progressive web apps with web technologies such as HTML, CSS, and JavaScript. It is built on top of the Angular and Cordova frameworks. It can be combined with JavaScript-based web frameworks like React and Vue.
+
+Regarding the previously cited article from Radhika Vyas in 'Index.dev':
+\begin{displayquote}
+    As Ionic depends on web technologies instead of native code, it might suffer from speed problems in graphics-intensive apps even if it is appropriate for most uses. Accessing native functionality often calls for plugins, which might cause extra complexity and sometimes compatibility problems\textcite{Vyas}.
+\end{displayquote}
+
+
+
+
+
+\section{{Summary}}%
+\label{sec:literature_summary}
+
+
+What is worth of noting, all of the analyzed frameworks are open-source, which illustrates trends in today's computer science
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcccccc}
+      \toprule
+                        & Windows &  macOS  & Linux &  iOS  & Android &  Web  \\
+      \midrule
+      Flutter (Dart)    &   yes   &   yes   &  (4)  &  yes  &   yes   &  yes  \\
+      Ionic (JS)        &   (1)   &   (1)   &  (1)  &  yes  &   yes   &  yes  \\
+      Cordova (JS)      &   (1)   &   (1)   &  (1)  &  yes  &   yes   &  yes  \\
+      Electron (JS)     &   yes   &   yes   &  yes  &  -    &    -    &  -    \\
+      React Native (JS) &   (2)   &   (3)   &  (3)  &  yes  &   yes   &  yes  \\
+      .NET MAUI (C\#)   &   yes   &   yes   &   -   &  yes  &   yes   &   -   \\
+      Tauri (JS, Rust)  &   yes   &   yes   &  yes  &  yes  &   yes   &  yes  \\
+      \bottomrule
+    \end{tabular}
+    \caption[Platform availability]{\label{tab:example}Target platform availability depending on frameworks.
+    \newline ( 1 ) by adding Electron package
+    \newline ( 2 ) via React Native Skia as a renderer Out-of-Tree Platform.
+    \newline ( 3 ) React Native for Microsoft's Universal Windows Out-of-Tree Platform
+    \newline ( 4 ) officially only for Debian/Ubuntu
+    }
+  
+\end{table}
