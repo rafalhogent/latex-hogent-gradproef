@@ -5,7 +5,7 @@
 
 \section{{Backend}}%
 \label{sec:backend}
-The best solution to implement back-end is to choose framework supporting same language as we used in front-end application. It gives an opportunity to share code and librarie between clients and server app.
+The best solution to implement back-end is to choose framework supporting same language as used in front-end application. It gives an opportunity to share code and librarie between clients and the server.
 
 \begin{displayquote}
     NestJS is a framework for building scalable Node.js server-side applications uses progressive JavaScript,  fully supports TypeScript (still enables developers to code in pure JavaScript) and combines elements of OOP (Object Oriented Programming) \autocite{NyakundiOOP}. Under the hood, Nest makes use of robust HTTP Server frameworks like ExpressJS \autocite{ExpressJS}. 
@@ -69,7 +69,10 @@ New module is created with a NestJs CLI command which automatically adds folders
 
 \begin{verbatim}
     nest generate resource modules/users
+\end{verbatim}
 
+\begin{listing}[H]
+    \begin{minted}{shell}
     modules
     └── users
         ├── entities
@@ -77,7 +80,9 @@ New module is created with a NestJs CLI command which automatically adds folders
         ├── users.module.ts
         ├── users.service.spec.ts
         └── users.service.ts
-\end{verbatim}
+    \end{minted}
+\caption[NestJS module folder tree]{NestJS module folder tree}
+\end{listing}
 
 
 Now, we need to create new table with users in the database. To achieve that a migration script is created and executed with the following commands:
@@ -126,21 +131,18 @@ The 'auth' module controller provides endpoints for login, register and profile 
     @Controller('auth')
     export class AuthController {
         constructor(private authService: AuthService) {}
-
         @Public()
         @HttpCode(HttpStatus.OK)
         @Post('login')
         signIn(@Body() dto: LoginDto) {
         return this.authService.login(dto.username, dto.password);
         }
-
         @Public()
         @HttpCode(HttpStatus.OK)
         @Post('register')
         register(@Body() dto: RegisterDto) {
         return this.authService.register(dto.username, dto.password);
         }
-
         @UseGuards(AuthGuard)
         @Get('profile')
         getProfile(@Request() req) {

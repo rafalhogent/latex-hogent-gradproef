@@ -4,7 +4,7 @@
 \section{\IfLanguageName{dutch}{Applicatie Ontwerp}{Application Design}}%
 \label{sec:design}
 
-For this proof-of-concept example a simple functionality will be implemented. User should be able to make measurements notes (logs) inside custom defined tables (logbooks). Each row contains the 'moment' field representing date and time of a measurement, up to 4 numeric fields representing values and a comment field. Some default predefined logbooks with most common body parameters will be added. Currently displayed lobkook will be chosen by selecting a button at the top of the page. If all of logbooks do not fit inside, two arrows will appear to allow scrolling left and right.
+For this proof-of-concept example a simple functionality will be implemented. User should be able to make measurements notes (logs) inside custom defined tables (logbooks). Each row contains a 'moment' field representing date and time of a measurement, up to 4 numeric fields representing values and a comment field. Some default predefined logbooks with most common body parameters will be added. Currently displayed lobkook will be chosen by selecting a button at the top of the page. If all logbooks do not fit inside the bar, two arrows will appear to allow scrolling left and right.
 
 \begin{figure}[H]
     \centering
@@ -18,16 +18,16 @@ For this proof-of-concept example a simple functionality will be implemented. Us
     \caption[Logbooks page layout design]{\label{fig:layoutlogbook} Layout design of the logbooks page. Logbook Table (left), log edit menu (right) }
 \end{figure}
 
-On the Settings page user will be able to edit, remove and also create own custom logbooks with specified fields, units and (optionally) value precision. Before each line a checkbox will determine which logbooks should be visible on the tabs-bar on the Logbooks page. Before logbook deletion, an confirmation dialog must be shown.
+On the Settings page user will be able to edit, remove and also create own custom logbooks with specified fields, units and (optionally) value precision. Before each line a checkbox will determine which logbooks should be visible on the tabs-bar on the logbooks page. Before  deletion of a logbook, an confirmation dialog must be shown.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{layout-settings.png}
-    \caption[Settings page layout design]{\label{fig:layoutsettings} Layout Design: Settings Page with available logbooks (left), logbook edit menu (right)}
+    \caption[Settings page layout design]{\label{fig:layoutsettings} Layout design: Settings page with available logbooks (left), logbook edit menu (right)}
 \end{figure}
 
 To achieve the greatest flexibility, client-server architecture will be used. One of the biggest advantages of this solution is the ability to share information resources among different users or devices belonging to the same user. In other words, data consistency is improved, what ensures all clients access the latest data from a one central source, minimizing divergences. Moreover centralized data storage allows for effective backups and management, enhancing data reliability. There is also possibility for errors isolation - client applications failures do not affect the server or other clients, what improves overall system stability making maintanace easier.
-The intention is to allow the application to work completely in offline mode, and at the user's request or automatically in the background, synchronize the locally saved data with the cloud server. 
+The intention is to allow the application to work completely in offline mode, and synchronize the locally saved data with the cloud server, at the user's request or automatically in the background. 
 
 \begin{figure}[H]
     \centering
@@ -56,7 +56,7 @@ To improve implementation of Object-Oriented Programming principles (OOP) both c
 \autocite{TSDoc} \autocite{TSfeatures}
 \newline
 
-Vue.js is one of the three most popular JavaScript framework (next to Angular, React) for building user  interfaces. It provides a declarative, component-based programming model that helps develop user interfaces of any complexity. According to the official documentation Vue.js has two most important core features:
+Vue.js is one of the three most popular JavaScript framework (next to Angular, React) for building user  interfaces. It provides a declarative, component-based programming model that helps develop user interfaces of any complexity \autocite{VueDoc}. According to the official documentation Vue.js has two most important core features:
 \begin{itemize}
     \item \textbf{Declarative Rendering:} Vue extends standard HTML with a template syntax that allows developers to declaratively describe HTML output based on JavaScript state.
     \item \textbf{Reactivity:} Vue automatically tracks JavaScript state changes and efficiently updates the DOM when changes happen.
@@ -107,7 +107,7 @@ Through the CLI built-in functions framework allows to test and deploy once writ
 \section{\IfLanguageName{dutch}{Voorbereiding}{Prerequisites}}%
 \label{sec:prerequisites}
 
-The software is being developed on a PC machine with x64 architecture running Fedora Linux. The project  will be managed on the Azure DevOps where tasks are described and issues tracked. GitHub repository was initialized for code version control and cloned locally. The machine has already installed Node.js - a JavaScript runtime environment, Node Package Manager (npm) and Node Version Manager (nvm). Detailed installation is not a subject of this thesis.
+The software is being developed on a PC machine with x64 architecture running Fedora Linux. The project  will be managed on the Azure DevOps where tasks are described and issues tracked. GitHub repository was initialized for code version control and cloned locally. The machine has already installed Node.js - a JavaScript runtime environment, Node Package Manager \autocite{npm} and Node Version Manager \autocite{nvm}. 
 
 Quasar framework provides own command line interface (CLI) allowing access to more features and automating some tasks. The CLI will be installed globally to make possible to directly run Quasar commands in the terminal, run a local http server for testing or do upgrades on the project \autocite{QuasarStart}. According to the Quasar documentation, the following code needs to be executed:
 
@@ -314,7 +314,7 @@ export class LogbookLocalService {
 
 
 
-In the application repository client folder is organized in structured subfolders. In the 'pages 'folder are located vue files representing pages-components used by vue-router \autocite{VueRouter}. Folder 'models' contains entities and view-models definition in typescript. Folder 'services' contains 'local' subfolder where are located classes responsible for data management in client local storage, later will be added subfolder with classes responsible for external communication (like data synchronization). The full source code is available on the Github repository attached to the thesis.
+In the application repository client folder is organized in structured subfolders. In the 'pages' folder are located vue files representing pages-components used by vue-router \autocite{VueRouter}. Folder 'models' contains entities and view-models definition in typescript. Folder 'services' contains 'local' subfolder where are located classes responsible for data management in client local storage, later will be added subfolder with classes responsible for external communication (like data synchronization). The full source code is available on the Github repository attached to the thesis.
 
 \begin{listing}[H]
     \begin{minted}{shell}

@@ -35,7 +35,7 @@ This section will review information on cross-platform technologies and help jus
 \label{sec:flutter}
 
 Flutter is one of the most popular cross-platform frameworks. It was weleased by Google in 2017 and uses Dart as its programming language and offers a rich set of pre-built widgets.
-The framework offers a 'hot reload' feature what allows to see how the application changes as soon as code changes, without you having to recompile it. It supports Google's Material Design and doesn't rely on web browser technology. Instead, it has its own rendering engine for drawing widgets.
+The framework privides a 'hot reload' feature what allows developers to see how the application looks as soon as code changes without recompiling. It supports Google's Material Design and doesn't rely on web browser technology. Instead, it has its own rendering engine for drawing widgets \autocite{FlutterDoc}.
 
 \section{{React Native}}%
 \label{sec:reactnative}
@@ -44,10 +44,9 @@ React Native is an open-source framework developed by Facebook (now Meta) for bu
 
 It runs in a background process interpreting the JavaScript code directly on the target device and communicates with the native platform using serialized data over an asynchronous bridge \autocite{ReactNativeMedium}. Hot reload feature is also available.
 
-According to Radhika Vyas article in 'Index.dev', React Native is efficient, but its performance lags below native apps, especially in sophisticated apps needing significant computations or animations. It also has problems with achieving a uniform look and feel across both iOS and Android may be difficult and requires more work to satisfy users experience \textcite{Vyas}
+According to the article written by Radhika Vyas  in 'Index.dev', React Native is efficient, but its performance lags below native apps, especially in sophisticated apps needing significant computations or animations. It also has problems with achieving a uniform look and feel across both iOS and Android may be difficult and requires more work to satisfy users experience, \textcite{Vyas}.
 
 Publishing React Native projects as Web Apps is also possible, but can be difficult due to incompatibility of components between web-browser and mobile device, what requires platform specific conditional component rendering.
-
 
 
 
@@ -79,46 +78,68 @@ Publishing React Native projects as Web Apps is also possible, but can be diffic
 \caption[React Native platform specific conditional rendering]{React Native platform specific conditional rendering. Example provided by thesis author uses two different components depending on target OS}
 \end{listing}
                 
-                
-                
+
+\section{{Cordova}}
+\label{sec:cordova}
+Cordova is an open-source mobile development framework maintained by Apache Software Foundation which allows using standard web technologies like HTML, CSS, and JavaScript for mobile cross-platform development \autocite{CordovaDoc}. To implement mobile platform sppecific native features developers can use plugins like battery status, camera access, native dialogs, screen orientation,vibration or geolocation. Cordova contains several components, the following diagram shows a high-level view of its system architecture.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{cordova_arch.eps}
+    \caption[Cordova architecture]{\label{fig:cordova} Cordova architecture }
+\end{figure}    
                 
 \section{{Ionic}}%
 \label{sec:ionic}
 
 Ionic Framework is an open-source mobile app development platform that allows developers to build native and progressive web apps with web technologies such as HTML, CSS, and JavaScript. It is built on top of the Angular and Cordova frameworks. It can be combined with JavaScript-based web frameworks like React and Vue.
 
-Regarding the previously cited article from Radhika Vyas in 'Index.dev':
+Regarding the previously cited article from Radhika Vyas in 'Index.dev',
 \begin{displayquote}
-    As Ionic depends on web technologies instead of native code, it might suffer from speed problems in graphics-intensive apps even if it is appropriate for most uses. Accessing native functionality often calls for plugins, which might cause extra complexity and sometimes compatibility problems\textcite{Vyas}.
+Ionic's dependence on well-known web technologies makes it easily accessible to web developers, therefore enabling them to move naturally into mobile development, but: \newline
+% \end{displayquote}
+% , but also:
+% \begin{displayquote}
+    As Ionic depends on web technologies instead of native code, it might suffer from speed problems in graphics-intensive apps even if it is appropriate for most uses. Accessing native functionality often calls for plugins, which might cause extra complexity and sometimes compatibility problems, \textcite{Vyas}.
 \end{displayquote}
 
 
 
-\section{{MAUI.NET}}%
+
+\section{{MAUI .NET}}%
 \label{sec:maui}
 
-For developers who prefer to code in csharp programming language, Microsoft offers .NET Multi-platform App UI (.NET MAUI), a cross-platform framework for creating native mobile and desktop apps that can run on Android, iOS, macOS, and Windows from a single shared code-base written with C\# and XAML  \autocite{XAML} \autocite{MAUIDocs}. 
-
-.NET MAUI is an evolution of its predecessor - Xamarin.Forms \autocite{Xamarin} and provides a single framework for building the UIs for mobile and desktop environment. The following diagram demonstrates the architecture of a .NET MAUI App:
+For developers who prefer to code in .NET environment, Microsoft offers a Multi-platform App UI (.NET MAUI), a framework for creating native mobile and desktop apps that can run on Android, iOS, macOS, and Windows from a single shared code-base written with C\# and XAML  \autocite{XAML} \autocite{MAUIDocs}. MAUI is an evolution of its predecessor - Xamarin.Forms \autocite{Xamarin} and provides a single framework for building the UIs for mobile and desktop environment. The following diagram demonstrates the architecture of a .NET MAUI App:
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{maui-diagram.png}
-    \caption[Layout]{\label{fig:maui} In a .NET MAUI app, written code interacts primarily  with the .NET MAUI controls and API layer (1). This layer then directly consumes the native platform APIs (3). In addition, app code may directly exercise platform APIs (2), if required. \autocite{MAUIDocs}}
+    \caption[MAUI architecture]{\label{fig:maui} In a .NET MAUI app, written code interacts primarily  with the .NET MAUI controls and API layer (1). This layer then directly consumes the native platform APIs (3). In addition, app code may directly exercise platform APIs (2), if required. \autocite{MAUIDocs}}
 \end{figure}
 
 .NET MAUI projects can be written on Windows PC (Visual Studio or vscode) or Mac (vscode, JetBrains Rider \autocite{JBrainsRider}), and compiled into native app packages.
+It also  provides APIs for native device features like access to sensors, such as the accelerometer, compass, and gyroscope on devices, ability to check the device's network connectivity state, picking files from the device, store data and initiate browser-based authentication. MAUI includes support for 'hot reload' technique, which allows code modifications on running app, without the need to recompile. 
 
-It also  provides APIs for native device features like access to sensors, such as the accelerometer, compass, and gyroscope on devices, ability to check the device's network connectivity state, picking files from the device, store data and initiate browser-based authentication.
 
-.NET MAUI includes support for 'hot reload' technique, which allows code modifications on running app, without the need to recompile. 
 
+
+\section{{Tauri}}%
+\label{sec:tauri}
+
+The youngest open-source framework in this comparison is Tauri. It's designed to create projects for all popular operating systems: Linux, macOS, Windows, Android and iOS using a local device WebView \autocite{WebView} frontend libraries and a Rust language \autocite{RustWiki} sourced binary back-end with an API that the front-end can interact with. Tauri uses web technologies that means that virtually any frontend framework is compatible. Technically, the presentation layer is managed by two librieries: TAO - responsible for Tauri window creation and WRY - responsible for web view rendering \autocite{TauriDoc}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{tauri-arch.png}
+    \caption[Tauri architecture]{\label{fig:tauri} Tauri architecture diagram }
+\end{figure}
 
 
 \section{{Electron}}%
 \label{sec:electron}
 Electron is a framework for building desktop applications for Windows, macOS, and Linux using Web technologies like JavaScript, HTML, and CSS. It is based on Google Chromium Web browser and Node.js in its binary, Electron allows developers to maintain one single JavaScript codebase and publish everywhere without native development experience required \autocite{ElectronDoc}.
-Many worldwide popular desktop applications are build with Electron: Visual Studio Code, Signal, Discord, Postman, ... and many others including Mediko - a proof-of-concept application written for the purpose of this thesis \ref{sec:desktop}.
+
+Many worldwide popular desktop applications are build with Electron framework: Visual Studio Code \autocite{Vscode}, Signal \autocite{Signal}, Discord, Postman \autocite{Postman}, ... and many others including Mediko - a proof-of-concept application written for the purpose of this thesis \ref{sec:desktop}.
 
 \begin{figure}[H]
     \centering
@@ -126,29 +147,6 @@ Many worldwide popular desktop applications are build with Electron: Visual Stud
     \caption[Electron architecture]{\label{fig:electronarch} Electron architecture \autocite{ElectronArch} }
 \end{figure}
 
-\section{{Cordova}}
-\label{sec:cordova}
-Cordova is an open-source mobile development framework maintaained by Apache Software Foundation which allows using standard web technologies like HTML, CSS, and JavaScript for mobile cross-platform development \autocite{CordovaDoc}. To implement mobile platform sppecific native features developers can use plugins like battery status, camera access, native dialogs, screen orientation,vibration or geolocation.
-
-Cordova contains several components, the following diagram shows a high-level view of its system architecture.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{cordova_arch.eps}
-    \caption[Cordova architecture]{\label{fig:cordova} Cordova architecture }
-\end{figure}
-
-
-\section{{Tauri}}%
-\label{sec:tauri}
-
-The youngest open-source framework in this comparison is Tauri. It's designed to create projects for all popular operating systems: Linux, macOS, Windows, Android and iOS using a local device WebView \autocite{WebView} frontend libraries and a Rust language \autocite{RustWiki} sourced binary back-end with an API that the front-end can interact with. Tauri uses web technologies that means that virtually any frontend framework is compatible. Techniclly, fronten is managed by two librieries: TAO - responsible for Tauri window creation and WRY - responsible for web view rendering \autocite{TauriDoc}. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{tauri-arch.png}
-    \caption[Tauri architecture]{\label{fig:tauri} Tauri architecture diagram }
-\end{figure}
 
 
 \section{{Summary}}%
@@ -160,7 +158,7 @@ After analyzing the literature, the following conclusions may be drawn:
     \item web-based framework can provide opportunity for most efficient development process
 \end{itemize}
 
-It is also possible to use multiple technologies in one project, for examplpe SPA web application build on Vue, React or Angular for online web pages, Cordova or Tauri to publish mobile application and Electron for desktop environment. 
+It is also possible to use multiple technologies in one project, for examplpe SPA web application build on Vue, React or Angular for online web pages, Cordova or Tauri to publish mobile application and Electron for desktop environments. 
 What is worth of noting, all of the analyzed frameworks are open-source, which illustrates trends in today's computer science.
 
 
@@ -171,12 +169,12 @@ What is worth of noting, all of the analyzed frameworks are open-source, which i
                         & Windows &  macOS  & Linux &  iOS  & Android &  Web  \\
       \midrule
       Flutter (Dart)    &   yes   &   yes   &  (4)  &  yes  &   yes   &  yes  \\
-      Ionic (JS)        &   (1)   &   (1)   &  (1)  &  yes  &   yes   &  yes  \\
-      Cordova (JS)      &   (1)   &   (1)   &  (1)  &  yes  &   yes   &  yes  \\
-      Electron (JS)     &   yes   &   yes   &  yes  &  -    &    -    &  -    \\
       React Native (JS) &   (2)   &   (3)   &  (3)  &  yes  &   yes   &  yes  \\
+      Cordova (JS)      &   (1)   &   (1)   &  (1)  &  yes  &   yes   &  yes  \\
+      Ionic (JS)        &   (1)   &   (1)   &  (1)  &  yes  &   yes   &  yes  \\
       .NET MAUI (C\#)   &   yes   &   yes   &   -   &  yes  &   yes   &   -   \\
       Tauri (JS, Rust)  &   yes   &   yes   &  yes  &  yes  &   yes   &  yes  \\
+      Electron (JS)     &   yes   &   yes   &  yes  &  -    &    -    &  -    \\
       \bottomrule
     \end{tabular}
     \caption[Platform availability]{\label{tab:example}Target platform availability depending on frameworks.

@@ -4,7 +4,7 @@
 \section{{Building Desktop Application}}%
 \label{sec:desktop}
 
-Quasar Framework provides integrated support for Electron available from CLI plug-in installation. It is a free and open-source software framework developed and maintained by OpenJS Foundation, designed to create desktop applications using web technologies (mainly HTML, CSS and JavaScript).  User interface is rendered by the Google Chromium browser engine connected with a back-end using the Node.js runtime environment. It also uses various APIs to enable functionality such as native integration with Node.js services and an inter-process communication module.
+Quasar Framework provides integrated support for Electron available from CLI plug-in installation. It is a free and open-source software framework developed and maintained by OpenJS Foundation, designed to create desktop applications using web technologies (mainly HTML, CSS and JavaScript).  User interface is rendered by the Google Chromium browser engine connected with a back-end using the Node.js runtime environment. It also uses various APIs to enable functionality such as native integration with Node.js services and an inter-process communication module \ref{sec:electron}.
 
 In order to develop and build a Quasar Desktop App, it is necessary to add the Electron mode to the Quasar project using CLI command:
 \begin{verbatim}
@@ -38,7 +38,7 @@ All required packages are added and installed automatically
 \caption[Electron module folder structure tree]{Electron module newly created folder structure tree}
 \end{listing}
 
-We start the electron app with CLI command:
+We start the Electron app with CLI command:
 
 \begin{verbatim}
     quasar dev -m electron
@@ -57,13 +57,13 @@ The software is being developed on Fedora Linux with GNOME Wayland session. Acco
     electron --gtk-version=3   # or --gtk-version=2
 \end{verbatim}
 
-so, the new updated electron startup command for linux is:
+so, the new updated Electron startup command for Linux is:
 
 \begin{verbatim}
     quasar dev -m electron -- --gtk-version=3
 \end{verbatim}
 
-To make it easier an extra script electron-linux will be added to package.json file:
+To make it easier an extra script 'electron-linux' will be added to package.json file:
 
 \begin{listing}[H]
     \begin{minted}{json}
@@ -107,12 +107,12 @@ To build Electron for Microsoft Windows under Linux there was a VirtualBox \auto
 \section{{Building Mobile App}}%
 \label{sec:mobile}
 
-Making builds fro Android requires some extra preparation work. The first step is to make sure you got the Cordova CLI installed and the necessary SDKs.
+Making builds fro Android requires some extra preparation work. The first step is to make sure  the Cordova CLI \autocite{CordovaDoc}, Android Studio \autocite{AndroidDev} and the required SDKs are installed.
+
 \begin{verbatim}
     npm install -g cordova
 \end{verbatim}
 
-After this step is done we need to install the Android platform SDK and Android Studio.  
 
 It is also necessary to add environment variables to let the development kit know, where required packages are located.
 
