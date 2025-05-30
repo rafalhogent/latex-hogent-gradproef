@@ -9,8 +9,6 @@ As expected the application is effectively published for all platforms available
 
 The development phase was relatively efficient, despite some problems when making build for Electron on Linux described is Cross platform builds chapter \ref{sec:desktop}.
 
-% \label{sec:desktop}
-
 There are some important facts to consider about Electron framework. It is based on Google Chromium browser and has relatively short support period for each release (about 6 months) and LTS versions are not available. In some cases for security reasons the application will require regular updates following Chromium and Electron calendar. If developers decide to publish the product on Microsoft Store, it will be necessary to comply with requirement that  browser-based apps have to be within two major versions of the latest release of the browser engine\autocite{MSstoreElectron}.
 
 \begin{table}[H]
@@ -26,7 +24,7 @@ There are some important facts to consider about Electron framework. It is based
         v37.x.y  &  Prerelease  &  24-06-2025  &  13-01-2026  &  138  &  TBD   \\ 
         \bottomrule
 \end{tabular}
-\caption[Electron version history]{\label{tab:electron}Electron version history and support dates \autocite{ElectronReleases}.
+\caption[Electron version history]{\label{tab:electronhistory}Electron version history and support dates \autocite{ElectronReleases}.
 }
 \end{table}
 
@@ -44,7 +42,7 @@ Despite application look almost identically on all platforms there was an issue 
 \end{figure}
 
 \section{{Size, stability, performance}}%
-\label{sec:appseveluation}
+\label{sec:sizeapps}
 For the purpose of the proof-of-concept application the performance is completely sufficient. On all platforms program starts immediately. There were no stability issues recorded. What is worth noting, the size of cordova android .apk build is only 3.5MB, compared to Native React about 70 MB for a similar functionality application.
 
 \begin{table}[H]
@@ -62,7 +60,7 @@ For the purpose of the proof-of-concept application the performance is completel
  
         \bottomrule
 \end{tabular}
-\caption[Builds size comparison]{\label{tab:electron}Builds size comparison, *data for ReactNative build of a similar application developed by the author.
+\caption[Builds size comparison]{\label{tab:builds_size}Builds size comparison, *data for ReactNative build of a similar application developed by the author.
 }
 \end{table}
 

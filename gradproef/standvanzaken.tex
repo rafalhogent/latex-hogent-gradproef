@@ -94,13 +94,75 @@ Regarding the previously cited article from Radhika Vyas in 'Index.dev':
 
 
 
+\section{{MAUI.NET}}%
+\label{sec:maui}
+
+For developers who prefer to code in csharp programming language, Microsoft offers .NET Multi-platform App UI (.NET MAUI), a cross-platform framework for creating native mobile and desktop apps that can run on Android, iOS, macOS, and Windows from a single shared code-base written with C\# and XAML  \autocite{XAML} \autocite{MAUIDocs}. 
+
+.NET MAUI is an evolution of its predecessor - Xamarin.Forms \autocite{Xamarin} and provides a single framework for building the UIs for mobile and desktop environment. The following diagram demonstrates the architecture of a .NET MAUI App:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{maui-diagram.png}
+    \caption[Layout]{\label{fig:maui} In a .NET MAUI app, written code interacts primarily  with the .NET MAUI controls and API layer (1). This layer then directly consumes the native platform APIs (3). In addition, app code may directly exercise platform APIs (2), if required. \autocite{MAUIDocs}}
+\end{figure}
+
+.NET MAUI projects can be written on Windows PC (Visual Studio or vscode) or Mac (vscode, JetBrains Rider \autocite{JBrainsRider}), and compiled into native app packages.
+
+It also  provides APIs for native device features like access to sensors, such as the accelerometer, compass, and gyroscope on devices, ability to check the device's network connectivity state, picking files from the device, store data and initiate browser-based authentication.
+
+.NET MAUI includes support for 'hot reload' technique, which allows code modifications on running app, without the need to recompile. 
+
+
+
+\section{{Electron}}%
+\label{sec:electron}
+Electron is a framework for building desktop applications for Windows, macOS, and Linux using Web technologies like JavaScript, HTML, and CSS. It is based on Google Chromium Web browser and Node.js in its binary, Electron allows developers to maintain one single JavaScript codebase and publish everywhere without native development experience required \autocite{ElectronDoc}.
+Many worldwide popular desktop applications are build with Electron: Visual Studio Code, Signal, Discord, Postman, ... and many others including Mediko - a proof-of-concept application written for the purpose of this thesis \ref{sec:desktop}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{electron-arch.png}
+    \caption[Electron architecture]{\label{fig:electronarch} Electron architecture \autocite{ElectronArch} }
+\end{figure}
+
+\section{{Cordova}}
+\label{sec:cordova}
+Cordova is an open-source mobile development framework maintaained by Apache Software Foundation which allows using standard web technologies like HTML, CSS, and JavaScript for mobile cross-platform development \autocite{CordovaDoc}. To implement mobile platform sppecific native features developers can use plugins like battery status, camera access, native dialogs, screen orientation,vibration or geolocation.
+
+Cordova contains several components, the following diagram shows a high-level view of its system architecture.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{cordova_arch.eps}
+    \caption[Cordova architecture]{\label{fig:cordova} Cordova architecture }
+\end{figure}
+
+
+\section{{Tauri}}%
+\label{sec:tauri}
+
+The youngest open-source framework in this comparison is Tauri. It's designed to create projects for all popular operating systems: Linux, macOS, Windows, Android and iOS using a local device WebView \autocite{WebView} frontend libraries and a Rust language \autocite{RustWiki} sourced binary back-end with an API that the front-end can interact with. Tauri uses web technologies that means that virtually any frontend framework is compatible. Techniclly, fronten is managed by two librieries: TAO - responsible for Tauri window creation and WRY - responsible for web view rendering \autocite{TauriDoc}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{tauri-arch.png}
+    \caption[Tauri architecture]{\label{fig:tauri} Tauri architecture diagram }
+\end{figure}
 
 
 \section{{Summary}}%
 \label{sec:literature_summary}
 
+After analyzing the literature, the following conclusions may be drawn:
+\begin{itemize}
+    \item JavaScript seems to be the most universal programming language
+    \item web-based framework can provide opportunity for most efficient development process
+\end{itemize}
 
-What is worth of noting, all of the analyzed frameworks are open-source, which illustrates trends in today's computer science
+It is also possible to use multiple technologies in one project, for examplpe SPA web application build on Vue, React or Angular for online web pages, Cordova or Tauri to publish mobile application and Electron for desktop environment. 
+What is worth of noting, all of the analyzed frameworks are open-source, which illustrates trends in today's computer science.
+
 
 \begin{table}[H]
     \centering
