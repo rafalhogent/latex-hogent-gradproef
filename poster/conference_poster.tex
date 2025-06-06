@@ -18,7 +18,7 @@
 \author{Rafal Kowalski}
 \email{rafal.kowalski@student.hogent.be}
 \supervisor{Luc Vervoort (HoGent)}
-\cosupervisor{Wim Goedertier (HoGent)}
+% \cosupervisor{Wim Goedertier (HoGent)}
 
 % Indien ingevuld, wordt deze informatie toegevoegd aan het einde van de
 % abstract. Zet in commentaar als je dit niet wilt.
@@ -31,56 +31,76 @@
 \maketitle
 
 \begin{abstract}
-It's only a model.
-You don't vote for kings. Who's that then? We found them. Ni! Ni! Ni! Ni!
-The nose? On second thoughts, let's not go there. It is a silly place. Bloody Peasant! And the hat. She's a witch! Where'd you get the coconuts?
+
+  Cross-platform ontwikkeling biedt vele mogelijkheden voor programmeurs, waarbij één enkele codebase wordt tegelijkertijd omgezet in toepassingen die werken op meerdere verschillende platformen. De graduaatsproef zal proberen antwoord te geven op de vraag of de softwareontwikkelingsmethode op basis van het gebruik van één broncode en publicatie op vele platformen effectief betrouwbaar werkende applicatie kan leveren. Die methode kan zeer nuttig zijn voor programmeurs die hun code als standalone applicatie ook willen publiceren. De literatuurstudie helpt om beschikbare oplossingen te vergelijken en om de keuze van de frameworks voor de proof-of-concept-applicatie te rechtvaardigen. \newline
+  Het project is geschreven in één programmeertaal en geïmplementeerd op verschillende apparaten met één codebase. Er wordt ook een strategie voorgesteld om gebruikersdata te synchroniseren tussen alle frontend-clients.
+  Ten slotte worden de resultaten geëvalueerd. De moeilijkheden tijdens het ontwikkelingsproces worden benadrukt. De prestaties en stabiliteit van de applicaties worden geanalyseerd, en de grootte van de builds wordt vergeleken.
 \end{abstract}
 
 \begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
 
 \section{Introductie}
 
-Be quiet! Found them? In Mercia?! The coconut's tropical! But you are dressed as one… Well, what do you want? Knights of Ni, we are but simple travelers who seek the enchanter who lives beyond these woods.
+Het ontwikkelen van een applicatie vereist vaak veel kennis en ervaring, werken met meerdere talen kan een extra moeilijkheid zijn.
+De motivatie voor het schrijven van deze thesis is om een eenvoudige en efficiënte methode te ontwikkelen voor het coderen en publiceren van cross-platform applicaties die beschikbaar zijn op alle populaire en veelgebruikte apparaten.\newline
 
-Well, what do you want? It's only a model. Camelot! We found them. We shall say `Ni' again to you, if you do not appease us.
+De graduaatsproef onderzoeksvraag:
+\textbf{Welke voordelen en moeilijkheden kunnen we verwachten bij het maken van applicaties voor meerdere platformen met gebruik maken van één enkele codebron in JS/TS, het Quasar-framework, Electron en Cordova? }
 
-The nose? Shut up! Burn her! I am your king. You don't vote for kings.
+Het doel van deze thesis is om een collectie van proof-of-concept client-applicaties te bouwen voor verschillende besturingssystemen en web-browsers die gebruikersdata via een server kunnen synchroniseren.
 
-You can't expect to wield supreme power just `cause some watery tart threw a sword at you! Well, we did do the nose. I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
+\section{Methodologie}
+Het onderzoek is uitgevoerd door de analyse van bestaande cross-platform oplossingen en door het maken van een Proof-of-Concept applicatie. Graduaatsproef als applicatieontwikkeling is een taak die niet alleen kennis van programmeertalen vereist, maar ook technische vaardigheden, dus het kan alleen worden gemaakt door mensen met IT-achtergrond. De thesis bestaat uit onderstaande werkfasen:
+\begin{itemize}
+    \item onderzoek van beschikbare cross-platform oplossingen
+    \item ontwikkelen van een proof-of-concept-applicatie, inclusief lay-out, domein en architectuurontwerp, implementatie van functionaliteiten
+    \item implementatie van synchronisatie via server
+    \item builds voor verschillende besturingssystemen en web
+    \item analyse van resultaten, voordelen en moeilijkheden
+\end{itemize}
 
-Why do you think that she is a witch? We want a shrubbery!! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
+\section{Proof-of-Concept}
+Om de grootste flexibiliteit te bereiken, werd er een client-server architectuur gebruikt. Een van de grootste voordelen van deze oplossing is de mogelijkheid om gegevens te delen met verschillende gebruikers of verschillende apparaten van dezelfde gebruiker. De client (Quasar \& Vue) is gepubliceerd als web-applicatie (SPA), Linux \& Windows Desktop (Electron) en mobile (Cordova).
 
-\section{Experimenten}
-
-A newt? Camelot! Why? No, no, no! Yes, yes. A bit. But she's got a wart.
-
-Shut up! I dunno. Must be a king. Who's that then? Look, my liege! On second thoughts, let's not go there. It is a silly place.
-
-Shut up! Will you shut up?! No, no, no! Yes, yes. A bit. But she's got a wart. He hasn't got shit all over him. It's only a model. It's only a model.
-
-Bring her forward! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave 
-
-\section{Sectie met figuur}
-
-De {\LaTeX} figure-omgeving bepaalt zelf waar een afbeelding komt en dat is meestal niet op de plek in de tekst waar de figure-omgeving gedefinieerd wordt. Als je wilt forceren dat afbeeldingen toch in de flow van de tekst blijven, dan kan je dat zoals hieronder:
+De bedoeling was om de applicatie volledig in de offline modus te laten werken en de lokaal opgeslagen gegevens te synchroniseren met de cloudserver (NestJs), op aanvraag van de gebruiker of automatisch op de achtergrond.
 
 \begin{center}
   \captionsetup{type=figure}
   \includegraphics[width=1.0\linewidth]{responsive}
-  \captionof{figure}{He hasn't got shit all over him. The nose? Where'd you get the coconuts? What do you mean? We shall say `Ni' again to you, if you do not appease us}
+  \captionof{figure}{Cross platform Applicatie met Quasar \& Vue.JS  }
 \end{center}
 
-Let er wel op dat dit tot problemen met bladschikking kan leiden.
+
 
 \section{Conclusies}
 
-Don't underestimate the Force. Oh God, my uncle. How am I ever gonna explain this? I suggest you try it again, Luke. This time, let go your conscious self and act on instinct. Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force.
+Deze thesis heeft een sjabloon gepresenteerd voor het ontwerp en de implementatie van een webgebaseerde platformonafhankelijke applicatie-ontwikkeling. De kwaliteit van de geleverde template is consistent met verwachtingen. Ondanks enkele problemen was het schrijven van de code en het maken van builds voor verschillende toestellen geen moeilijke taak, in plaats daarvan leverde het interessante ervaring en kans om de technologie beter te kennen.
+
+De grootste moeilijkheden zijn onder meer:
+\begin{itemize}
+    \item conflicten bij het bouwen met verschillende technologieën
+    \item consistente gebruikersinterface onderhouden op alle platforms
+    \item beperkte prestaties en moeilijke optimalisatie in vergelijking met native frameworks
+\end{itemize}
+
+
+De grootste voordelen:
+\begin{itemize}
+    \item versneld ontwikkelingsproces
+    \item gemakkelijkere gebruikersinterface harmonisatie
+    \item snellere implementatie van wijzigingen op alle platforms tegelijkertijd
+    \item gecentraliseerde broncode
+
+\end{itemize}
 
 \section{Toekomstig onderzoek}
 
-I care. So, what do you think of her, Han? No! Alderaan is peaceful. We have no weapons. You can't possibly… I have traced the Rebel spies to her. Now she is my only link to finding their secret base.
-
-Kid, I've flown from one side of this galaxy to the other. I've seen a lot of strange stuff, but I've never seen anything to make me believe there's one all-powerful Force controlling everything. There's no mystical energy field that controls my destiny. It's all a lot of simple tricks and nonsense. You are a part of the Rebel Alliance and a traitor! Take her away! 
+\begin{itemize}
+    \item prestatietests onder hoge belasting met veel gegevens
+    \item code delen tussen client en server
+    \item builds voor Apple-toestellen
+    \item implementatie van p-o-c met gebruik van andere cross-platform frameworks
+\end{itemize}
 
 \end{multicols}
 \end{document}

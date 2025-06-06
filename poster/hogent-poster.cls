@@ -131,7 +131,7 @@
 \newcommand{\course}[1]{\def\@course{#1}}
 \newcommand{\academicyear}[1]{\def\@academicyear{#1}}
 \newcommand{\supervisor}[1]{\def\@supervisor{#1}}
-\newcommand{\cosupervisor}[1]{\def\@cosupervisor{#1}}
+% \newcommand{\cosupervisor}[1]{\def\@cosupervisor{#1}}
 \newcommand{\projectrepo}[1]{\def\@projectrepo{#1}}
 \newcommand{\institution}[1]{\def\@institution{#1}}
 
@@ -142,7 +142,7 @@
 \@onlypreamble\course
 \@onlypreamble\academicyear
 \@onlypreamble\supervisor
-\@onlypreamble\cosupervisor
+% \@onlypreamble\cosupervisor
 \@onlypreamble\projectrepo
 \@onlypreamble\keywords
 \@onlypreamble\institution
@@ -285,11 +285,11 @@
     \raggedright\Large Promotor: \@supervisor
   \fi
 
-  \if\@cosupervisor\@empty\else
-    \medskip
-    \raggedright\Large Co-promotor: \@cosupervisor
-  \fi
-  \endgroup
+  % \if\@cosupervisor\@empty\else
+  %   \medskip
+  %   \raggedright\Large Co-promotor: \@cosupervisor
+  % \fi
+  % \endgroup
 
   \begingroup
   \bigskip
